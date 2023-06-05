@@ -1,0 +1,32 @@
+package com.monocept.classes;
+
+public class complex {
+	private int real;
+	private int imaginary;
+	public int getReal() {
+		return real;
+	}
+	public complex(int real, int imaginary) {
+		
+		this.real = real;
+		this.imaginary = imaginary;
+	}
+	public void setReal(int real) {
+		this.real = real;
+	}
+	public int getImaginary() {
+		return imaginary;
+	}
+	public void setImaginary(int imaginary) {
+		this.imaginary = imaginary;
+	}
+	public  complex add_complex(complex num) {
+		
+		complex answere=new complex(num.getReal()+this.real,num.getImaginary()+this.imaginary);
+		return answere;
+	}
+public void display() {
+		
+		System.out.println("number is : "+this.real+" "+this.imaginary+"i");
+	}
+}

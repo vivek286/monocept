@@ -1,0 +1,66 @@
+package com.monocept.assesment2;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class PigDiceGame2 {
+
+	
+	public static void main(String[]args) {
+		
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Lets Start Game!! \n to quit enter 0 \n");
+	
+		
+		Random random = new Random();
+		StartGame(scanner,random);
+		System.out.println("Thankyou for playing");
+		
+	}
+
+	public static void StartGame(Scanner scanner, Random random) {
+		int count_turns=1;
+		int score=0;
+		int final_score=20;
+		while(score<final_score) {
+			int turn_score=TurnScore(scanner,random,final_score);
+			if(turn_score==0) {
+				System.out.println("You Got 0 Score");
+				System.out.println("Current Score is :- "+score);
+			}else {
+				score+=turn_score;
+				System.out.println("Total Score:- "+score);
+				count_turns++;
+				System.out.println("Turn Number "+count_turns);
+			}
+			
+		}
+		System.out.println("Game Over \nYour Score is"+score+ "\n No of turn :- "+count_turns+"\nto play again press 1 else 0");
+		int play_again=scanner.nextInt();
+		if(play_again==1)StartGame(scanner, random);
+		
+		
+	}
+
+	public static int TurnScore(Scanner scanner, Random random,int final_score) {
+		int score=0;
+		
+		char response='a';
+		while(score<final_score) {
+			System.out.println("Roll or hold? (r/h) ");
+			response=scanner.next().charAt(0);
+			if(response=='h')
+				return score;
+			else {
+				int dice_number=random.nextInt(6)+1;
+				if(dice_number==1)
+					return 0;
+				else
+					score+=dice_number;
+				System.out.println("Dice number is :- "+dice_number);
+			}
+		}
+		
+		return score;
+	}
+}

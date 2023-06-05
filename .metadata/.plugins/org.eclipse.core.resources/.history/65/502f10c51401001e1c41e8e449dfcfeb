@@ -1,0 +1,5 @@
+package interface_app;
+
+public interface IShape {
+void area();
+}

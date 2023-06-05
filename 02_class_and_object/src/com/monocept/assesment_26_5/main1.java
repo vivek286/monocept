@@ -1,0 +1,63 @@
+package com.monocept.assesment_26_5;
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class main1 {
+
+	public static boolean email_checker(String email) {
+		String regex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";  
+        Pattern pattern = Pattern.compile(regex);  
+        Matcher matcher = pattern.matcher(email); 
+		return matcher.matches();
+	}
+	
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Enter no of costumers :");
+		int number=scanner.nextInt();
+		customer array[]=new customer[number];
+		int count=0;
+		while(count<number) {
+			System.out.println("Enter employe "+(count+1)+ " name :");
+			String name=scanner.next();
+			System.out.println("Enter employee "+(count+1)+ "Email :");
+			String email =scanner.next();
+			while(!email_checker(email)) {
+				System.out.println("Invalid Email of "+(count+1)+ " Customer Try again :");	
+				email =scanner.next();
+			}
+			System.out.println("Enter password for employee "+(count+1)+ " :");
+			String password=scanner.next();
+			customer new_customer=new customer(count+1,name,email,password);
+			array[count]=new_customer;
+			
+			count++;
+		}
+		
+		array=sort_array(array);
+		for(customer temp:array) {
+			System.out.println(temp);
+		}
+
+	}
+	
+	public static customer[] sort_array(customer[] array) {
+		// TODO Auto-generated method stub
+		int n=array.length;
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<n-1;j++) {
+				if(array[j].getName().compareTo(array[j+1].getName())>0) {
+					customer temp=array[j];
+					array[j]=array[j+1];
+					array[j+1]=temp;
+				}
+			}
+		}
+		return array;
+		
+	}
+
+
+}

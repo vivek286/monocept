@@ -1,0 +1,15 @@
+package com.monocept.classes;
+
+public class Rectangle {
+private int width;
+private int height;
+public void accept(int width,int height) {
+	this.width=width;
+	this.height=height;
+	
+}
+public void display() {
+	System.out.println("Height : " +this.height);
+	System.out.println("Width : "+this.width);
+}
+}

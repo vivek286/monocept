@@ -1,0 +1,51 @@
+package com.monocept.assesment_26_5;
+
+public class account {
+	private int accountno;
+	private int balance;
+	private String name;
+	private acc_type type;
+	public int getAccountno() {
+		return accountno;
+	}
+	public void setAccountno(int accountno) {
+		this.accountno = accountno;
+	}
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public account(int accountno, int balance, String name, acc_type type) {
+		
+		this.accountno = accountno;
+		this.balance = balance;
+		this.name = name;
+		this.type = type;
+	}
+	
+	public account() {
+		// TODO Auto-generated constructor stub
+	}
+	public acc_type getType() {
+		return type;
+	}
+	public void setType(acc_type type) {
+		this.type = type;
+	}
+	public int max_balance(account array[]) {
+		int max=0;
+		for(account element:array)if(element.getBalance()>max)max=element.getBalance();
+		return max;
+	}
+	public String toString() {
+		return "Account Name : "+this.name+"\n"+"Account Type: "+this.type+"\n"+"Account Number : "+this.accountno;
+	}
+}

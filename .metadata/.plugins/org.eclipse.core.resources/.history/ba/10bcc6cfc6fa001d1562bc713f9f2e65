@@ -1,0 +1,27 @@
+package com.monocept.enums;
+
+public class patient {
+private BpLevel bplevel;
+private String name;
+public patient(BpLevel bplevel, String name) {
+	
+	this.bplevel = bplevel;
+	this.name = name;
+}
+public BpLevel getBplevel() {
+	return bplevel;
+}
+public void setBplevel(BpLevel bplevel) {
+	this.bplevel = bplevel;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String toString() {
+	return "Patient name: "+this.name+"\n"+"BPLEVEL: "+this.bplevel;
+}
+
+}

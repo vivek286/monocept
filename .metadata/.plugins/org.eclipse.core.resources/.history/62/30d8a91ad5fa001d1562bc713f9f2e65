@@ -1,0 +1,49 @@
+package com.monocept.enums;
+
+import java.util.Scanner;
+
+public class matrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int matrix[][]=readInput();
+		displaymatrix(matrix);
+
+	}
+
+	public static int[][] readInput() {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Enter number of rows");
+		int n=scanner.nextInt();
+		System.out.println("Enter number of columns");
+		int m=scanner.nextInt();
+		int matrix[][]=new int[n][m];
+		for(int i=0;i<n;i++) {
+			matrix[i]=readrows(m,scanner);
+		}
+		return matrix;
+	}
+
+	public static int[] readrows(int m,Scanner scanner) {
+		int array[]=new int[m];
+		for(int i=0;i<m;i++)array[i]=scanner.nextInt();
+		return array;
+	}
+
+	public static void displaymatrix(int[][] matrix) {
+		int n=matrix.length;
+		int m=matrix[0].length;
+		for(int i=0;i<n;i++) {
+			printrow(matrix[i]);
+		}
+		
+	}
+
+	public static void printrow(int[] array) {
+		int a=array.length;
+		for(int i=0;i<a;i++)System.out.print(array[i]+" ");
+		System.out.println();
+		
+	}
+
+}

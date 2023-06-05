@@ -1,0 +1,14 @@
+package com.monocept.classes;
+
+public class mainmethod {
+
+	public static void main(String[] args) {
+		Rectangle r1=new Rectangle();
+		
+		Rectangle r2=new Rectangle(30,33);
+		
+		r1.display();
+		r2.display();
+	}
+
+}

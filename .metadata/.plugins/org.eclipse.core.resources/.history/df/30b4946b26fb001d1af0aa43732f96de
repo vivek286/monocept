@@ -1,0 +1,42 @@
+package com.monocept.assesment_26_5;
+
+import java.util.Scanner;
+
+public class main1 {
+
+	public static boolean email_checker(String email) {
+//		if(!email.contains("@gmail.com"))
+//		return false;
+		
+		return email.contains("@gmail.com");
+	}
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Enter no of costumers :");
+		int number=scanner.nextInt();
+		customer array[]=new customer[number];
+		int count=0;
+		while(count<number) {
+			System.out.println("Enter employe "+(count+1)+ " name :");
+			String name=scanner.next();
+			System.out.println("Enter employee "+(count+1)+ "Email :");
+			String email =scanner.next();
+			while(!email_checker(email)) {
+				System.out.println("Invalid Email of "+(count+1)+ " Customer Try again :");	
+				email =scanner.next();
+			}
+			System.out.println("Enter password for employee "+(count+1)+ " :");
+			String password=scanner.next();
+			
+			array[count]=new customer(count+1,name,email,password);
+			count++;
+		}
+		array.sorting();
+//		for(customer temp:array) {
+//			System.out.println("name :"+temp.getName()+ " Email : "+temp.getEmail()+" eid : "+temp.getCid());
+//		}
+
+	}
+
+
+}

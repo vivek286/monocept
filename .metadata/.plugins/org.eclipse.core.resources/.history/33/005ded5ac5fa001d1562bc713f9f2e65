@@ -1,0 +1,10 @@
+package com.monocept.enums;
+
+public class main {
+public static void main(String[] args) {
+	
+	patient p1=new patient(BpLevel.high,"vivek");
+	System.out.println(p1);
+	
+}
+}

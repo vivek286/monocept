@@ -1,0 +1,17 @@
+package com.monocept.classes;
+
+public class mainmethod {
+
+	public static void main(String[] args) {
+		Rectangle r1=new Rectangle();
+		System.out.println("Araea of rectangle1 : "+r1.getHeight()*r1.getWidth());
+		Rectangle r2=new Rectangle(30,33);
+		r2.setHeight(10);
+		r2.setWidth(40);
+		System.out.println("Araea of rectangle2 : "+r2.getHeight()*r2.getWidth());
+		
+		r1.display();
+		r2.display();
+	}
+
+}

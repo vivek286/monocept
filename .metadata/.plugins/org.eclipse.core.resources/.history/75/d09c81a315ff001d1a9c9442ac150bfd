@@ -1,0 +1,18 @@
+package com.monocept.inheritanceassesment;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Vehicle vehicle = new Vehicle("XYZ Motors");
+        vehicle.displayInfo();
+
+        FourWheeler fourWheeler = new FourWheeler("ABC Cars", 15);
+        fourWheeler.displayInfo();
+
+        Car car = new Car("DEF Autos", 12, 25000);
+        car.displayInfo();
+
+	}
+
+}

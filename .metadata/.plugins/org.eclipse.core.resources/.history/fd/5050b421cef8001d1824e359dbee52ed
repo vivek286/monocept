@@ -1,0 +1,25 @@
+package com.techlabs.test1;
+
+import java.util.Scanner;
+
+public class scannerfileio {
+
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner("D:/javainput.txt");
+		int wordcount = 0;
+        int charactercount = 0;
+        int linecount = 0;
+		while(scanner.hasNextLine()) {
+			String line = scanner.nextLine();
+			System.out.println(line);
+			charactercount+=line.length();
+			linecount++;
+			wordcount+=line.split(" ").length;
+			
+			
+		}
+		System.out.println("wordcount : "+wordcount+" \n charactercount : "+charactercount+"\n linecount : "+linecount);
+
+	}
+
+}

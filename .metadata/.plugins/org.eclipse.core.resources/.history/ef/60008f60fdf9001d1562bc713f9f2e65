@@ -1,0 +1,31 @@
+package com.techlabs.test1;
+
+import java.util.Scanner;
+
+public class test1 {
+
+	public static void main(String[] args) {
+	    
+	    number num=new number(10,20);
+	    
+	    System.out.println("Before Swappig:");
+	    System.out.println("a="+num.getNum1()+"\t"+"b="+num.getNum2());
+	    
+	    swap(num);//actual parameters
+	    
+	    System.out.println("After Swappig:");
+	    System.out.println("a="+num.getNum1()+"\t"+"b="+num.getNum2());
+
+	  }
+
+	  public static number swap(number num) // formal parameters
+	  {
+	      Integer temp;
+	    temp=num.getNum1();
+	    a=b;
+	    num.setNum1(num.getNum2());
+	    num.setNum2(temp);
+	    return num;
+	    
+	  }
+}
